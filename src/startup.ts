@@ -1,32 +1,36 @@
 import * as dotenv from 'dotenv';
-
-dotenv.config(); // Loads variables from '.env' file to process.env
 import * as express from 'express';
-const app = express();
 // const bodyParser = require('body-parser')
 import * as bodyParser from 'body-parser';
+import getDataRouter from './routes/getData';
+import postDataRouter from './routes/post';
 
+const MongoClient = require('mongodb').MongoClient;
+const assert = require('assert');
+
+dotenv.config(); // Loads variables from '.env' file to process.env
+const app = express();
 app.use(bodyParser.json());
 // const jsonParser = bodyParser.json();
 
+const url = 'mongodb://localhost:27017';
+const dbName = 'myproject';
 
+app.use("/api/users/get", getDataRouter);
+app.use("/api/users/post", postDataRouter);
 
-// respond with "hello world" when a GET request is made to the homepage
-app.get('/', function (req, res) {
-    res.send('hello world\n');
-    console.log("/ hit");
+app.get('/',  (req, res) => {
+    res.send('You are... somewhere.  \n');
+    
+    console.log("/ get  hit!");
 });
 
-app.post('/api/users',  (req: express.Request, res) => {
-    console.log("=================");
-    console.log("req.body", req.body);
-    console.log("-----------------");
-    console.log("req.headers", req.headers);
+// app.all('/*', function (req, res) {
+//     // status nie dochodzi :/
 
-    console.log("req.headers.dupa",req.headers["dupa"]);
-    res.send("this is response from /api/users")
-
-});
+//     // res.sendStatus(404).send("entered route path is not supported");
+//     res.send("Entered route-path is not supported").sendStatus(404);
+// });
 
 
 app.listen(3000,

@@ -1,9 +1,9 @@
 {
-    "name": "node.ts-startup",
+    "name": "interview-task",
     "version": "1.0.0",
-    "description": "node.ts boilerplate",
+    "description": "made on tb`s node.ts boilerplate ",
     "main": "./bin/startup.js",
-    "author": "tB",
+    "author": "cB",
     "license": "beerware",
     "engines": {
         "node": "8.4.0",
@@ -48,6 +48,7 @@
         "express": "^4.16.3",
         "git-rev": "^0.2.1",
         "jasmine-core": "^2.6.1",
+        "mongodb": "^3.0.7",
         "os": "^0.1.1",
         "uuid": "^3.1.0"
     }
