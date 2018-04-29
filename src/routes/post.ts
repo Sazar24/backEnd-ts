@@ -1,13 +1,21 @@
 import * as express from 'express';
+import mongoCrudService from '../services/mongoCRUD';
 const postDataRouter = express.Router();
 
 
 postDataRouter.post('/', async (req, res) => {
     try {
-        const token = req.body.token;
+        // const token = req.body.token;
+        const receivedObject = {
+            foo: req.body.foo,
+            number: req.body.number,
+            content: req.body.content,
+            author: req.body.author
+        }
 
-        res.status(200).send("router.post działa; Coś przyszło " + token)
-        console.log(req);
+        res.status(200).send("router.post działa; Coś przyszło: " + JSON.stringify(receivedObject))
+        console.log("received from >post< object: ", JSON.stringify(receivedObject));
+        mongoCrudService.postOneRecord(receivedObject);
     }
     catch (ex) {
         res.sendStatus(500);
