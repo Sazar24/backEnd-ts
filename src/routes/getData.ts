@@ -7,6 +7,7 @@ const assert = require('assert');
 const url = 'mongodb://localhost:27017/';
 const dbName = 'myproject';
 
+
 getDataRouter.get('/', function (req, res, next) {
     let outputsArray: any = [];
     console.log("/api/users/getall/ hit!");

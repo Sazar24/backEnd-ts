@@ -13,7 +13,15 @@ const app = express();
 app.use(bodyParser.json());
 const jsonParser = bodyParser.json();
 
-app.use(cors());
+app.all('/*', function (req, res, next)
+{
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Content-Type,Authorization");
+    res.header("Access-Control-Allow-Methods", "GET,POST");
+    next();
+});
+
+// app.use(cors());
 
 // app.use("/api/users/get", getDataRouterOldWay);
 app.use("/api/users/getall", getData);
