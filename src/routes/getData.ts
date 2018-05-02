@@ -14,9 +14,10 @@ getDataRouter.get('/', function (req, res, next) {
 
     mongo.connect(url, function (err, client) {
         assert.equal(null, err);   // now its know its connected succesfully
-        console.log("connect to mongo success");
+        console.log("in getDataRouter: connect to mongo success");
 
         const db = client.db(dbName);
+        // db.collection("users").insertOne({"number":"5","name":"nameTest2", "town":"towntest2"});
         const cursor = db.collection('users').find();   // znajdz wszystkie rekordy w tej kolekcji dla tej bazy z ktora sie polaczyles url`em
 
         cursor.forEach(function (doc, err) { //  
@@ -24,8 +25,9 @@ getDataRouter.get('/', function (req, res, next) {
             outputsArray.push(doc);   // każdy rekord z tej bazy odczytaj i wrzuc do roboczej tablicy
         }, function () {
             client.close();   // juz nie potrzebuje tej bazy. Zamknij ją.
-            console.log("resultArray w foreachu:", outputsArray);
+            // console.log("resultArray w foreachu:", outputsArray);
             res.status(200).send(JSON.stringify(outputsArray));
+            // res.status(200).send("bźdong!!!");
         });
     });
 });
