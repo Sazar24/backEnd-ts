@@ -5,17 +5,12 @@ const postDataRouter = express.Router();
 
 postDataRouter.post('/', async (req, res) => {
     try {
-        // const token = req.body.token;
         const receivedObject = {
             name: req.body.name,
             surname: req.body.surname,
             town: req.body.town,
             email: req.body.email,
-
-            // foo: req.body.foo,
-            // number: req.body.number,
-            // content: req.body.content,
-            // author: req.body.author
+            date: req.body.date
         }
 
         res.status(200).send("router.post działa; Coś przyszło: " + JSON.stringify(receivedObject))

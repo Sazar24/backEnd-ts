@@ -32,6 +32,7 @@
         "@types/lodash": "^4.14.92",
         "@types/node": "^7.0.18",
         "@types/uuid": "^2.0.30",
+        "@types/reflect-metadata": "^0.1.0",
         "jest": "^21.2.1",
         "nodemon": "^1.12.1",
         "npm-check-updates": "^2.14.0",
@@ -40,6 +41,7 @@
         "typescript": "^2.6.2"
     },
     "dependencies": {
+        "@types/mongodb": "^3.0.17",
         "async-delay": "^1.0.3",
         "asyncawait": "^1.0.6",
         "axios": "^0.17.1",
