@@ -1,14 +1,31 @@
+This is a backend part for **interview-project**. Made on IV/V 2018.
+
+There are 3 end-points, all determined in ./src/routes/users.ts.  
+Api allows to perform 3 actions:   
++ download (getAll) all records (users, to be exact) stored in database,
++ post new record/User to database
++ delete one record/User, by its id.
+
+Details of storable dataType/record in ./src/models/users.ts
+
+Starting file is ./src/startup.ts  
+
+MongoDB is used as database.  
+
+Project written with typeScript  
+*...on someone else's boileplate (with "beerware" license - so, I guess, I dont need to put a link to it here, but probably I own him a entire keg...).*
+
+#  
+#
+Below are the residudes after oryginal boiler-plate Readme file:
 # node.ts
 
 This a very basic startup project with `Node.js`+`ES7` and `Typescript` prepared for Linux environment.
 
 Extra features:
-- Dependency Injection (in `./src/IoC`) with samples
 - Local environment variables (in `.env`)
 - Some convenient commands (look at `package.json` `scripts` section)
-- Test samples (`jest` inside)
 - `async/await` included, `axios` on board
-- Extra services: `Logger`, `Environment` and `RunMode`
 
 ## Before start
 
@@ -17,7 +34,5 @@ Use `npm i` to install local packages. Use `npm run preinstall` to install globa
 Add `.env`. You can based on `.env.example`.
 
 ## Where to start?
-
-In `Main.ts`, `Run()` method. This is the place for your code. Put all dependencies in a constructor (don't forget to add them to IoC `./src/IoC/IoC.ts` and optionally to `Types.ts`).
 
 Use `npm run serve` to build and run your code continuously.
