@@ -22,7 +22,6 @@ test('should be able to find inserted object in mongoDB and return null when que
 
     const id: any = userMock1.id; // type "any" is ugly, but used only because its mock, and im sure ID is defined.
     const foundUser: User = await usersRepoMock.findById(id);
-    // console.log(`\nYou were looking for user with .id == ${id} and foundUser is: `, foundUser );
     expect(userMock1).toEqual(foundUser);
 
         //kind of a stuppid test, but it would be terrible, if it would fail...:

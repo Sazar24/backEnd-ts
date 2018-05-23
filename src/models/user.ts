@@ -9,7 +9,8 @@ export class User {
     public surname: string = '';
     public town: string = '';
     public email: string = '';
-    public date: Date = new Date(); // TODO?.
+    // public date: Date = new Date(); // TODO?.
+    public date: string = '';
 
     public mock(distinction: string) {
         this.id = uuidv1();
@@ -17,6 +18,6 @@ export class User {
         this.surname = "bar" + distinction;
         this.email = "hakuna@matata.pl" + distinction;
         this.town = "Foobaria" + distinction;
-        this.date = new Date(2000 - 1 - 1);
+        // this.date = new Date(2000 - 1 - 1);
     }
 }

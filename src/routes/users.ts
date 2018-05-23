@@ -12,14 +12,9 @@ const usersRouter = express.Router();
 const usersRepo = new UsersRepository(env.MONGO_URI);
 
 usersRouter.get('/', async (req, res) => {
-    try {
-        const users: User[] = await usersRepo.getAll();
+    const users: User[] = await usersRepo.getAll();
 
-        res.send(users);
-
-    } catch (error) {
-        throw error;
-    }
+    res.send(users);
 })
 
 usersRouter.post('/', async (req, res) => {
@@ -40,7 +35,6 @@ usersRouter.post('/', async (req, res) => {
 
 usersRouter.delete('/:id', async (req, res) => {
     const id: guid = req.params.id;
-    console.log("hit: router.delete with id: ", id);
 
     try {
         await usersRepo.deleteByID(id);
