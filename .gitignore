@@ -3,5 +3,5 @@
 /_priv
 /bin
 /.vscode
-.env
+#.env
 /src/__tests__/proofs/promises_vs_async.ts
