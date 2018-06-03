@@ -1,8 +1,11 @@
+# About
 This is a backend part for **interview-project**. Made on IV/V 2018.
 
-There are 3 end-points, all determined in ./src/routes/users.ts.  
+*(The frontend part (and task-content) is avaible at: https://github.com/Sazar24/data-collector-FrontEndPart )*
+
+The endpoints are determined in ./src/routes/users.ts.  
 Api allows to perform 3 actions:   
-+ download (getAll) all records (users, to be exact) stored in database,
++ download all records (users, to be exact) stored in database,
 + post new record/User to database
 + delete one record/User, by its id.
 
@@ -10,7 +13,7 @@ Details of storable dataType/record in ./src/models/users.ts
 
 Starting file is ./src/startup.ts  
 
-MongoDB is used as database.  
+**MongoDB** is used as database.  
 
 Project written with typeScript  
 *...on someone else's boileplate (with "beerware" license - so, I guess, I dont need to put a link to it here, but probably I own him a entire keg...).*
